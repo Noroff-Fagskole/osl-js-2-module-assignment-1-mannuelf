@@ -28,5 +28,7 @@ This is the API endpoint you will use:
 
 ## Submission
 
-- Submit PDF with a GitHub Repository URL inside
+- Accept challenge: [https://classroom.github.com/a/xkweh2PM](https://classroom.github.com/a/xkweh2PM)
+- Push all changes to Github Classroom Repository
+- Submit PDF with a GitHub Repository URL inside of it
 - A link to live demo www.students-website.com/js-2-ma-1/ (How you deploy is up to you)
