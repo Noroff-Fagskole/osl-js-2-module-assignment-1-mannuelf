@@ -1,18 +1,17 @@
+import { WISH_LIST_KEY } from "../utils/constants.js";
 import { displayMessage } from "./displayMessage.js";
-import { getWishList } from "../utils/getWishList.js";
+import { getWishList } from "../utils/wishlist.js";
 
 const wishlist = getWishList();
 
 export function renderProducts(products) {
   const productsContainer = document.querySelector('.products-container');
-  const wishlistButtons = document.querySelectorAll(".add-wish-list");
 
-  productsContainer.innerHTML = '';
+  productsContainer.innerHTML = "";
 
   if (products.length === 0) {
     displayMessage("is-danger", "sorry buddy nada!!", ".products-container")
-  }
-  else {
+  } else {
     products.forEach(product => {
       const hasFavs = wishlist.find(function (fav) {
         return parseInt(fav.id) === product.id;
@@ -52,6 +51,8 @@ export function renderProducts(products) {
     });
   }
 
+  const wishlistButtons = document.querySelectorAll(".product i");
+
   wishlistButtons.forEach((button) => {
     button.addEventListener("click", handleClick);
   });
@@ -73,17 +74,18 @@ export function renderProducts(products) {
     });
 
     if (productExists === undefined) {
-      const product = { id: id, name: name, price: price, photo: photo};
+      const product = { id: id, name: name, price: price, photo: photo };
       currentFavs.push(product);
-      saveFavs(currentFavs);
+      saveToWishList(currentFavs);
     } else {
       const newFavs = currentFavs.filter((fav) => fav.id !== id);
-      saveFavs(newFavs);
+      saveToWishList(newFavs);
     }
   }
 
-  function saveFavs(favs) {
-    localStorage.setItem("wishlist", JSON.stringify(favs));
+  function saveToWishList(favs) {
+    localStorage.setItem(WISH_LIST_KEY, JSON.stringify(favs));
   }
+
 
 }
