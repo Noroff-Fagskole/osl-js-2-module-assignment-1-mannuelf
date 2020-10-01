@@ -34,7 +34,9 @@ export function renderProducts(products) {
                   data-id="${product.id}"
                   data-name="${product.name}"
                   data-price="${product.price}"
-                  data-photo="${product.image}"></i>
+                  data-photo="${product.image}"
+                  data-something="product.tags"
+                  ></i>
 
                   <p class="title is-4">${product.price}</p>
                   <p class="subtitle is-6">${product.name}</p>
@@ -53,7 +55,7 @@ export function renderProducts(products) {
 
   const wishlistButtons = document.querySelectorAll(".product i");
 
-  wishlistButtons.forEach((button) => {
+  wishlistButtons.forEach(button => {
     button.addEventListener("click", handleClick);
   });
 

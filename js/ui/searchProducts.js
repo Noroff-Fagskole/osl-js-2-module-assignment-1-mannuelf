@@ -7,6 +7,7 @@ export function searchProducts(products) {
   search.onkeyup = function (event) {
     const searchValue = event.target.value.trim().toLowerCase();
     const filteredProducts = filterProducts(searchValue, products);
+
     renderProducts(filteredProducts);
   };
 }

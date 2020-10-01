@@ -1,4 +1,4 @@
-import { getWishList } from "./utils/getWishList.js";
+import { getWishList } from "./utils/wishlist.js";
 
 const wishlist = getWishList();
 
