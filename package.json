@@ -1,0 +1,17 @@
+{
+  "name": "osl-js-2-module-assignment-1-mannuelf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": "git@github.com:Noroff-Fagskole/osl-js-2-module-assignment-1-mannuelf.git",
+  "author": "Mannuel Ferreira <mannuel.ferreira@gmail.com>",
+  "license": "MIT",
+  "browserslist": [
+    "since 2017-06"
+  ],
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
